@@ -10,8 +10,13 @@ package guiofficefurniture;
  * @author mc03225
  */
 class Table extends FurnitureItem {
-    public Table(String id) {
-        super("From Furniture Item constructor");
+   
+    Table(){
+        super();        
+    }
+    
+    public Table(int id, char tw, int qty){
+        super(id, tw, qty);
         System.out.println("Constructing furniture.");
         idNum = 10;
         double cost = 11;
