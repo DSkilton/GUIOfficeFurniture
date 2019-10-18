@@ -5,13 +5,17 @@ package guiofficefurniture;
  */
 
 public class Chair extends FurnitureItem {
+
     //default true
-    private Boolean armRest; 
+    private static Boolean armRest; 
 
     Chair() {
         super();
         armRest = false;
         itemPrice();   
+    }
+    
+    Chair (int id, char ar){
     }
     
     Chair (int id, char tw, int qty, Boolean arm) {
@@ -20,7 +24,13 @@ public class Chair extends FurnitureItem {
         itemPrice();
     }
     
-    public Boolean getArmRest() {
+    public static void setArmRest(boolean armRest) {
+        armRest = armRest; 
+    }
+    
+    public static Boolean getArmRest() {
         return armRest;
-    }        
+    }    
+    
+    
 }

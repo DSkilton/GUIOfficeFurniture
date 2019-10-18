@@ -22,5 +22,5 @@ class Table extends FurnitureItem {
         double cost = 11;
         char ar = 'y';
         System.out.println(idNum);
-    }
+    }   
 }

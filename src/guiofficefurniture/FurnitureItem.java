@@ -23,37 +23,39 @@ public class FurnitureItem {
     public FurnitureItem() {
         //System.out.println("Constructing furniture: " + arg);
         idNum = 12;
-        quantity = 3;
         typeOfWood = 'o';
+        quantity = 3;
     }
     
-    FurnitureItem(int id, char tw, int qty){
-        super();
-        idNum = id;
-        quantity = qty; 
-        typeOfWood = tw; 
+    public FurnitureItem(int id, char tw, int qty){
+        this.idNum = id;
+        this.typeOfWood = tw; 
+        this.quantity = qty;         
     }
         
     public double itemPrice(){
         if (typeOfWood == 'w'){
-        itemPrice = 10.00;
+            itemPrice = 10.00;
             } else if (typeOfWood == 'o'){
-        itemPrice = 6.00;
+            itemPrice = 6.00;
             }      
       
         return itemPrice;    
     }
        
     private int calcUnits(){
+        
         int calcUnits = 1625;
-            if (armRest == true) {
-                calcUnits = calcUnits + 250; 
+            if (Chair.getArmRest() == true) {
+                calcUnits += 250; 
             }
         
         return units;
     }
    
+    @Override
     public String toString(){
+        
         return super.toString() + "  Id Number: " + idNum + "  Quantity: " + quantity + "  Type of Wood: " + typeOfWood + "  Item Price:  £" + itemPrice();
        //return super.toString();
     }

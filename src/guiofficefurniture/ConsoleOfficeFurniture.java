@@ -9,7 +9,7 @@ public class ConsoleOfficeFurniture {
 
     static Chair newChair = new Chair();
     
-    static int Desk newDesk = new Desk();
+    static Desk newDesk = new Desk();
     
     static Table newTable = new Table();
 
@@ -36,20 +36,19 @@ public class ConsoleOfficeFurniture {
     }
     
     static int menu(){ //displays the main menu and returns user choice to the switch in main method
-        int iChoice;
         
+        int iChoice;
         Scanner sc = new Scanner(System.in);
         
-        do{
-            System.out.println("Please Enter Your Furniture Type \n" +
-                          "1. Add Chair \n" +
-                          "2. Add Table \n" +
-                          "3. Add Desk \n" +
-                          "0. Exit");
-            
-            iChoice = sc.nextInt();
-        } 
-        while (iChoice < 0 || iChoice > 3);
+            do{
+                System.out.println("Please Enter Your Furniture Type \n" +
+                              "1. Add Chair \n" +
+                              "2. Add Table \n" +
+                              "3. Add Desk \n" +
+                              "0. Exit");      
+                iChoice = sc.nextInt();
+            } 
+            while (iChoice < 0 || iChoice > 3);
         
         return iChoice;
     }
@@ -65,13 +64,13 @@ public class ConsoleOfficeFurniture {
         Scanner sc = new Scanner(System.in);
         
         System.out.println("Please Enter a furniture id : ");
-            idNum = sc.nextInt();
+        idNum = sc.nextInt();
             
         System.out.println("Please Enter quantity : ");
-            quantity = sc.nextInt();
+        quantity = sc.nextInt();
             
         System.out.println("Please Enter type of wood (o or w) : ");
-            typeOfWood = sc.next().charAt(0);
+        typeOfWood = sc.next().charAt(0);
              
         newFurnitureItem = new FurnitureItem(idNum, typeOfWood, quantity);
         
@@ -80,10 +79,9 @@ public class ConsoleOfficeFurniture {
         return idNum;      
     }   
       
-    static void addChair(int idNum){
+    static void addChair(int idNum, char ar){
         
         double cost;
-        char ar;
         cost = 0;
         
         ImageIcon i = new ImageIcon("Chair1.jpg");
@@ -95,7 +93,7 @@ public class ConsoleOfficeFurniture {
         
         newChair = new Chair(idNum, ar);
         
-        System.out.println("\nSUMMARY : " + newChair.toString() + "  Cost: " + newChair.cost() +  "  Armrests: " + newChair.getArmRests(ar));
+        System.out.println("\nSUMMARY : " + newChair.toString() + "  Cost: " + newChair.cost() +  "  Armrests: " + newChair.getArmRest());
     }   
     
         static void addTable(int idNum){
