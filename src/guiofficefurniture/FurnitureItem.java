@@ -32,6 +32,10 @@ public class FurnitureItem {
         this.typeOfWood = tw; 
         this.quantity = qty;         
     }
+    
+    public FurnitureItem(int id){
+        this.idNum = id;
+    }
         
     public double itemPrice(){
         if (typeOfWood == 'w'){

@@ -229,20 +229,18 @@ public class GuiOfficeFurniture extends JFrame implements ActionListener, MouseL
         myChair.add(chair2);
         
 if (iSmallGridIndex == 6){           
-            JOptionPane.showMessageDialog(frame, "Small Furniture Display Limit Reached", "Error", JOptionPane.ERROR_MESSAGE);
+            Component frame = null;
+            JOptionPane.showMessageDialog(frame, "Small Furniture Display Limit Reached");
         } //end of small grid limit if statement
         
         else { int chairBtnResult = JOptionPane.showConfirmDialog(null, myChair, "Chair Selected", JOptionPane.OK_CANCEL_OPTION);
         
         if (chairBtnResult == JOptionPane.OK_OPTION) {
-            
            System.out.println("chairID: " + chairID.getText());
-        
            if (oak.isSelected()){ 
                 selectedWood = "Oak";
                 System.out.println("Type of Wood Selected: " + oak.getText());               
-           } 
-           else if (walnut.isSelected()){
+           } else if (walnut.isSelected()){
                 selectedWood = "Walnut";
                 System.out.println("Type of Wood Selected: " + walnut.getText());
            }         
@@ -255,8 +253,7 @@ if (iSmallGridIndex == 6){
                 selectedArmType = "Without Arm Rest";
                 emptySmallLabel[iSmallGridIndex].setIcon(c1);
                 iSmallGridIndex++;
-           } 
-           else if (chair2.isSelected()){
+           } else if (chair2.isSelected()){
                 System.out.println("Chair2: " + chair2.getText());
                 //emptySmall6.setIcon(c2);
                 selectedArmType = "With Arm Rest";
@@ -266,15 +263,13 @@ if (iSmallGridIndex == 6){
         }    
         if (chairBtnResult == JOptionPane.OK_OPTION){
             System.out.println("OK Pressed");
-            
         } else if (chairBtnResult == JOptionPane.CANCEL_OPTION) {          
             System.out.println("Cancel Pressed");      
         }
+    }//end else for grid position check
         
-        }//end else for grid position check
-        
-     //Chair newChair = new Chair(chairID.getText());
-        Chair newChair = new Chair(iSmallGridIndex, chairID.getText(), selectedWood, quantity.getText(), selectedArmType);
+    //Chair newChair = new Chair(chairID.getText());
+    Chair newChair = new Chair(iSmallGridIndex, chairID.getText(), selectedWood, quantity.getText(), selectedArmType);
      
     return newChair;
     }
@@ -332,7 +327,7 @@ if (iSmallGridIndex == 6){
             System.out.println("Cancel Pressed");      
         }
         
-        Table newTable = new Table(TableID.getText());     
+        Table newTable = new Table(TableID.());     
         return newTable;
     }
     

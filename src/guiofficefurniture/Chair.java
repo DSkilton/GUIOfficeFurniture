@@ -15,8 +15,15 @@ public class Chair extends FurnitureItem {
         itemPrice();   
     }
     
-    Chair (int id, char ar){
+    Chair (int id){
+        
     }
+    
+    Chair (int id, char ar){
+        
+    }
+
+    
     
     Chair (int id, char tw, int qty, Boolean arm) {
         super(id, tw, qty);
@@ -31,6 +38,12 @@ public class Chair extends FurnitureItem {
     public static Boolean getArmRest() {
         return armRest;
     }    
+    
+    public int cost(){
+        int cost = 0;
+        
+    return cost;
+    }
     
     
 }

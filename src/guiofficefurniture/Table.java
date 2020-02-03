@@ -15,6 +15,12 @@ class Table extends FurnitureItem {
         super();        
     }
     
+    public Table (int id){
+        super(id);
+        System.out.println("Constructing furniture.");
+        idNum = 10;
+    }
+    
     public Table(int id, char tw, int qty){
         super(id, tw, qty);
         System.out.println("Constructing furniture.");

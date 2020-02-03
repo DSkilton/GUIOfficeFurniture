@@ -17,8 +17,17 @@ public class Desk extends FurnitureItem {
         int iDraws;
     }
     
+   
+    
     Desk (int id, char tw, int qty, int iWidth, int iDepth, int iDraws) {
         super(id, tw, qty);
         itemPrice();
     }
+
+    Desk(int id) {
+        super(id);
+        itemPrice();
+    }
+    
+
 }

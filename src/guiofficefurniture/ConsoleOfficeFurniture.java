@@ -4,13 +4,9 @@ import java.util.Scanner;
 import javax.swing.*;
 
 public class ConsoleOfficeFurniture {
-    
     static FurnitureItem newFurnitureItem = new FurnitureItem();
-
     static Chair newChair = new Chair();
-    
     static Desk newDesk = new Desk();
-    
     static Table newTable = new Table();
 
     public static void main(String[] args) {
@@ -21,7 +17,7 @@ public class ConsoleOfficeFurniture {
         
         while (choice != 0) {
             switch(choice){
-                case 1: addChair(idNum);
+                case 1: addChair();
                         choice = menu();
                         break;
                 case 2: addTable(idNum);
@@ -54,7 +50,6 @@ public class ConsoleOfficeFurniture {
     }
     
     static int addFurnitureItem(){
-        
         int idNum;
         char typeOfWood;
         int quantity;
@@ -79,10 +74,10 @@ public class ConsoleOfficeFurniture {
         return idNum;      
     }   
       
-    static void addChair(int idNum, char ar){
-        
-        double cost;
-        cost = 0;
+    static int addChair(){
+        int idNum = 0;
+        char ar;
+        double cost = 0;
         
         ImageIcon i = new ImageIcon("Chair1.jpg");
         
@@ -94,6 +89,8 @@ public class ConsoleOfficeFurniture {
         newChair = new Chair(idNum, ar);
         
         System.out.println("\nSUMMARY : " + newChair.toString() + "  Cost: " + newChair.cost() +  "  Armrests: " + newChair.getArmRest());
+        
+        return idNum;
     }   
     
         static void addTable(int idNum){
